@@ -1,0 +1,5 @@
+(require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el")
+(cask-initialize)
+
+(add-to-list 'load-path "~/.emacs.d/custom")
+(load "00custom-setup.el")
