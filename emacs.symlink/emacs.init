@@ -1,5 +1,24 @@
+;;(debug-on-entry 'package-initialize)
 (require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el")
 (cask-initialize)
 
 (add-to-list 'load-path "~/.emacs.d/custom")
 (load "00custom-setup.el")
+(set-face-attribute 'default nil
+                :family "Terminus (TTF)" :height 195 :weight 'normal)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("2809bcb77ad21312897b541134981282dc455ccd7c14d74cc333b6e549b824f3" default))
+ '(org-agenda-files nil)
+ '(package-selected-packages
+   '(indium counsel-projectile ivy smartparens yaml-mode terraform-mode solarized-theme projectile pallet markdown-mode magit ido-hacks highlight-indentation groovy-mode grizzl go-mode gist exec-path-from-shell elixir-mode dockerfile-mode ag)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
