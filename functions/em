@@ -1,3 +1,0 @@
-em() {
-  emacsclient --no-wait -a emacs "$@" >/dev/null 2>&1 &
-}

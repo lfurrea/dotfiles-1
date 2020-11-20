@@ -12,7 +12,7 @@
 (depends-on "grizzl")
 (depends-on "groovy-mode")
 (depends-on "highlight-indentation")
-(depends-on "ido-hacks")
+;(depends-on "ido-hacks")
 (depends-on "ivy")
 (depends-on "magit")
 (depends-on "markdown-mode")

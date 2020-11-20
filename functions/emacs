@@ -1,0 +1,19 @@
+emacs() {
+  daemon_name=lfurrea
+  daemon=$(emacsclient -s $daemon_name -e '(+ 1 0)' 2>&1)
+  state=$(emacsclient -s $daemon_name -qn -e "(if (> (length (frame-list)) 1) 't)" 2>&1)
+
+  if [[ "$daemon" == "1" ]]; then
+    echo "Daemon $daemon_name running"
+    if [[ "$state" == "nil" ]]; then
+      emacsclient -c -s "$daemon_name" $* > /dev/null 2>&1 &;
+    else
+      emacsclient -s "$daemon_name" $* > /dev/null 2>&1 &;
+    fi
+  else
+    echo "Daemon not running"
+    /Applications/Emacs.app/Contents/MacOS/Emacs --daemon=$daemon_name
+    sleep 5
+    emacsclient -s $daemon_name --no-wait -c $* >/dev/null 2>&1 &;
+  fi
+}
